@@ -90,8 +90,7 @@
       &.e-bottom-icon-btn {
         @if $skin-name == 'tailwind' or $skin-name == 'tailwind-dark' {
           line-height: 0;
-        }
-        @else {
+        } @else {
           line-height: 1;
         }
         padding: $btn-top-icon-padding;
@@ -179,12 +178,7 @@
 
         &.e-top-icon-btn,
         &.e-bottom-icon-btn {
-          @if $skin-name == 'tailwind' or $skin-name == 'tailwind-dark' {
-            line-height: 0;
-          }
-          @else {
-            line-height: 1;
-          }
+          line-height: 1;
           padding: $btn-top-icon-padding;
         }
 
@@ -280,8 +274,7 @@
     &.e-bottom-icon-btn {
       @if $skin-name == 'tailwind' or $skin-name == 'tailwind-dark' {
         line-height: 0;
-      }
-      @else {
+      } @else {
         line-height: 1;
       }
       padding: $btn-top-icon-padding;
@@ -314,7 +307,7 @@
         margin-right: $btn-small-icon-margin;
       }
     }
-}
+  }
 
   .e-bigger.e-small .e-btn,
   .e-bigger.e-small .e-btn,
@@ -372,8 +365,7 @@
     &.e-bottom-icon-btn {
       @if $skin-name == 'tailwind' or $skin-name == 'tailwind-dark' {
         line-height: 0;
-      }
-      @else {
+      } @else {
         line-height: 1;
       }
       padding: $btn-top-icon-bigger-padding;
@@ -403,7 +395,7 @@
         margin-right: $btn-bigger-small-icon-margin;
       }
     }
-}
+  }
 
   .e-bigger .e-btn,
   .e-bigger .e-btn,
@@ -461,8 +453,7 @@
     &.e-bottom-icon-btn {
       @if $skin-name == 'tailwind' or $skin-name == 'tailwind-dark' {
         line-height: 0;
-      }
-      @else {
+      } @else {
         line-height: 1;
       }
       padding: $btn-top-icon-bigger-padding;
@@ -549,8 +540,7 @@
       &.e-bottom-icon-btn {
         @if $skin-name == 'tailwind' or $skin-name == 'tailwind-dark' {
           line-height: 0;
-        }
-        @else {
+        } @else {
           line-height: 1;
         }
         padding: $btn-top-icon-bigger-padding;
