@@ -50,7 +50,7 @@
 
       & .e-checkbox {
         &:focus {
-          +.e-frame {
+          + .e-frame {
             background-color: $cbox-focussed-bgcolor;
             border-color: $cbox-focussed-border-color;
             box-shadow: $cbox-focussed-box-shadow;
@@ -72,7 +72,7 @@
 
       & .e-checkbox {
         &:active {
-          +.e-frame {
+          + .e-frame {
             background-color: $cbox-focussed-bgcolor;
             border-color: $cbox-focussed-border-color;
             box-shadow: $cbox-focussed-box-shadow;
@@ -96,18 +96,6 @@
         & .e-frame {
           background-color: $cbox-hover-bgcolor;
           border-color: $cbox-hover-border-color;
-          @if $skin-name == 'FluentUI' {
-            font-size: $cbox-check-fontsize;
-
-            &:not(.e-check):not(.e-stop) {
-              color: $cbox-icon-color;
-            }
-
-            &:not(.e-check),
-            &:not(.e-stop)::before {
-              content: $cbox-check-content;
-            }
-          }
 
           &.e-check {
             background-color: $cbox-checkmark-hover-bgcolor;
@@ -116,16 +104,7 @@
           }
 
           &.e-stop {
-            @if $skin-name == 'bootstrap4' or $skin-name == 'tailwind' or $skin-name == 'bootstrap5' {
-              background-color: $cbox-checkmark-hover-bgcolor;
-              border-color: $cbox-checkmark-hover-border-color;
-            }
-            @else if $skin-name == 'FluentUI' {
-              border-color: $cbox-checkmark-hover-border-color;
-            }
-            @else {
-              color: $cbox-indeterminate-hover-color;
-            }
+            color: $cbox-indeterminate-hover-color;
           }
         }
 
@@ -142,23 +121,13 @@
 
           &.e-check {
             background-color: $cbox-checkmark-disabled-bgcolor;
-            @if $skin-name == 'bootstrap4' {
-              border-color: transparent;
-            }
-            @else {
-              border-color: $cbox-checkmark-disabled-border-color;
-            }
+            border-color: $cbox-checkmark-disabled-border-color;
             color: $cbox-checkmark-disabled-color;
           }
 
           &.e-stop {
             background-color: $cbox-indeterminate-disabled-bgcolor;
-            @if $skin-name == 'bootstrap4' {
-              border-color: transparent;
-            }
-            @else {
-              border-color: $cbox-indeterminate-disabled-border-color;
-            }
+            border-color: $cbox-indeterminate-disabled-border-color;
             color: $cbox-indeterminate-disabled-color;
           }
         }
@@ -184,57 +153,6 @@
           &.e-check {
             outline: $cbox-focus-outline;
             outline-offset: $cbox-focus-outline-offset;
-          }
-        }
-      }
-
-      .e-bigger .e-checkbox-wrapper,
-      .e-bigger.e-checkbox-wrapper,
-      .e-bigger .e-css.e-checkbox-wrapper,
-      .e-bigger.e-css.e-checkbox-wrapper {
-        &:hover {
-          & .e-frame {
-            @if $skin-name == 'FluentUI' {
-              font-size: $cbox-bigger-check-fontsize;
-
-              &:not(.e-check):not(.e-stop) {
-                color: $cbox-icon-color;
-              }
-            }
-          }
-        }
-      }
-
-      .e-small .e-checkbox-wrapper,
-      .e-small.e-checkbox-wrapper,
-      .e-small .e-css.e-checkbox-wrapper,
-      .e-small.e-css.e-checkbox-wrapper {
-        &:hover {
-          & .e-frame {
-            @if $skin-name == 'FluentUI' {
-              font-size: $cbox-small-check-fontsize;
-
-              &:not(.e-check):not(.e-stop) {
-                color: $cbox-icon-color;
-              }
-            }
-          }
-        }
-      }
-
-      .e-bigger.e-small .e-checkbox-wrapper,
-      .e-bigger.e-small.e-checkbox-wrapper,
-      .e-bigger.e-small .e-css.e-checkbox-wrapper,
-      .e-bigger.e-small.e-css.e-checkbox-wrapper {
-        &:hover {
-          & .e-frame {
-            @if $skin-name == 'FluentUI' {
-              font-size: $cbox-bigger-small-check-fontsize;
-
-              &:not(.e-check):not(.e-stop) {
-                color: $cbox-icon-color;
-              }
-            }
           }
         }
       }

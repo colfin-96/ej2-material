@@ -7,11 +7,9 @@
     -webkit-tap-highlight-color: transparent;
     background-color: $btn-bgcolor;
     border-color: $btn-border-color;
-    @if $skin-name != 'bootstrap5' {
-      box-shadow: $btn-box-shadow;
-    }
+    box-shadow: $btn-box-shadow;
     color: $btn-color;
-    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
     @at-root {
       &:hover {
         background-color: $btn-hover-bgcolor;
@@ -20,20 +18,9 @@
         color: $btn-hover-color;
       }
 
-      &:focus { // both keyboard and focus
+      &:focus {
+        // both keyboard and focus
         @include button-focus;
-      }
-
-      &:focus:not(:focus-visible) { //mouse click
-        @if $skin-name == 'FluentUI' {
-          outline: none !important; // sass-lint:disable-line no-important
-        }
-      }
-
-      &:focus-visible { // only for keybord
-        @if $skin-name == 'FluentUI' {
-          background-color: $btn-bgcolor;
-        }
       }
 
       &:active {
@@ -43,9 +30,7 @@
       &.e-active {
         background-color: $btn-active-bgcolor;
         border-color: $btn-active-border-color;
-        @if $skin-name != 'bootstrap5' {
-          box-shadow: $btn-active-box-shadow;
-        }
+        box-shadow: $btn-active-box-shadow;
         color: $btn-active-color;
       }
 
@@ -54,9 +39,6 @@
         border-color: $btn-disabled-border-color;
         box-shadow: $btn-flat-box-shadow;
         color: $btn-disabled-color;
-        @if $skin-name == 'FluentUI' {
-          outline: none;
-        }
       }
 
       & .e-ripple-element {
@@ -77,38 +59,16 @@
         &:focus {
           background-color: $btn-focus-bgcolor;
           border-color: $btn-focus-border-color;
-          @if ($skin-name == 'tailwind' or $skin-name == 'tailwind-dark' or $skin-name == 'bootstrap5') {
-            box-shadow: $btn-focus-box-shadow;
-          }
-          @else {
-            box-shadow: $btn-box-shadow;
-          }
+          box-shadow: $btn-box-shadow;
           color: $btn-round-focus-color;
           outline: $btn-focus-outline-round;
           outline-offset: $btn-focus-outline-offset;
         }
 
-        &:focus:not(:focus-visible) { //mouse click
-          @if $skin-name == 'FluentUI' {
-            outline: none !important; // sass-lint:disable-line no-important
-          }
-        }
-
-        &:focus-visible { // only for keybord
-          @if $skin-name == 'FluentUI' {
-            background-color: $btn-bgcolor;
-          }
-        }
-
         &:active {
           background-color: $btn-active-bgcolor;
           border-color: $btn-active-border-color;
-          @if ($skin-name == 'tailwind' or $skin-name == 'tailwind-dark') {
-            box-shadow: $btn-focus-box-shadow;
-          }
-          @else {
-            box-shadow: $btn-active-box-shadow;
-          }
+          box-shadow: $btn-active-box-shadow;
           color: $btn-round-active-color;
           outline: $btn-active-outline;
           outline-offset: $btn-active-outline-offset;
@@ -125,35 +85,11 @@
           &:focus {
             outline: $btn-focus-outline-round;
           }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important
-            }
-          }
-
-          &:focus-visible { // only for keybord
-            @if $skin-name == 'FluentUI' {
-              background-color: $btn-primary-bgcolor;
-            }
-          }
         }
 
         &.e-success {
           &:focus {
             outline: $btn-focus-outline-round;
-          }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important
-            }
-          }
-
-          &:focus-visible { // only for keybord
-            @if $skin-name == 'FluentUI' {
-              background-color: $btn-success-bgcolor;
-            }
           }
         }
 
@@ -161,53 +97,17 @@
           &:focus {
             outline: $btn-focus-outline-round;
           }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important
-            }
-          }
-
-          &:focus-visible { // only for keybord
-            @if $skin-name == 'FluentUI' {
-              background-color: $btn-info-bgcolor;
-            }
-          }
         }
 
         &.e-warning {
           &:focus {
             outline: $btn-focus-outline-round;
-           }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important
-            }
-          }
-
-          &:focus-visible { // only for keybord
-            @if $skin-name == 'FluentUI' {
-              background-color: $btn-warning-bgcolor;
-            }
           }
         }
 
         &.e-danger {
           &:focus {
             outline: $btn-focus-outline-round;
-          }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important
-            }
-          }
-
-          &:focus-visible { // only for keybord
-            @if $skin-name == 'FluentUI' {
-              background-color: $btn-danger-bgcolor;
-            }
           }
         }
       }
@@ -225,19 +125,7 @@
         }
 
         &:focus {
-          @include  primary-focus;
-        }
-
-        &:focus:not(:focus-visible) { //mouse click
-          @if $skin-name == 'FluentUI' {
-            outline: none !important; // sass-lint:disable-line no-important
-          }
-        }
-
-        &:focus-visible { // only for keybord
-          @if $skin-name == 'FluentUI' {
-            background-color: $btn-primary-bgcolor;
-          }
+          @include primary-focus;
         }
 
         &:active {
@@ -247,13 +135,7 @@
         &.e-active {
           background-color: $btn-primary-active-bgcolor;
           border-color: $btn-primary-active-border-color;
-          @if $skin-name == 'bootstrap4' {
-            $color-rgba: rgba(mix(lighten($btn-primary-focus-bgcolor, 50%), $btn-primary-focus-border-color, .15), .5);
-            box-shadow: 0 0 0 .25em $color-rgba;
-          }
-          @else if $skin-name != 'bootstrap5' {
-            box-shadow: $btn-active-box-shadow;
-          }
+          box-shadow: $btn-active-box-shadow;
           color: $btn-primary-active-color;
         }
 
@@ -280,18 +162,6 @@
 
         &:focus {
           @include success-focus;
-        }
-
-        &:focus:not(:focus-visible) { //mouse click
-          @if $skin-name == 'FluentUI' {
-            outline: none !important; // sass-lint:disable-line no-important
-          }
-        }
-
-        &:focus-visible { // only for keybord
-          @if $skin-name == 'FluentUI' {
-            background-color: $btn-success-bgcolor;
-          }
         }
 
         &:active,
@@ -324,18 +194,6 @@
           @include info-focus;
         }
 
-        &:focus:not(:focus-visible) { //mouse click
-          @if $skin-name == 'FluentUI' {
-            outline: none !important; // sass-lint:disable-line no-important
-          }
-        }
-
-        &:focus-visible { // only for keybord
-          @if $skin-name == 'FluentUI' {
-            background-color: $btn-info-bgcolor;
-          }
-        }
-
         &:active,
         &.e-active {
           @include info-active;
@@ -364,18 +222,6 @@
 
         &:focus {
           @include warning-focus;
-        }
-
-        &:focus:not(:focus-visible) { //mouse click
-          @if $skin-name == 'FluentUI' {
-            outline: none !important; // sass-lint:disable-line no-important
-          }
-        }
-
-        &:focus-visible { // only for keybord
-          @if $skin-name == 'FluentUI' {
-            background-color: $btn-warning-bgcolor;
-          }
         }
 
         &:active,
@@ -408,18 +254,6 @@
           @include danger-focus;
         }
 
-        &:focus:not(:focus-visible) { //mouse click
-          @if $skin-name == 'FluentUI' {
-            outline: none !important; // sass-lint:disable-line no-important
-          }
-        }
-
-        &:focus-visible { // only for keybord
-          @if $skin-name == 'FluentUI' {
-            background-color: $btn-danger-bgcolor;
-          }
-        }
-
         &:active {
           @include danger-active;
         }
@@ -427,13 +261,7 @@
         &.e-active {
           background-color: $btn-danger-active-bgcolor;
           border-color: $btn-danger-active-border-color;
-          @if $skin-name == 'bootstrap4' {
-            $color-rgba: rgba(mix(lighten($btn-primary-focus-bgcolor, 50%), $btn-primary-focus-border-color, .15), .5);
-            box-shadow: 0 0 0 .25em $color-rgba;
-          }
-          @else if $skin-name != 'bootstrap5' {
-            box-shadow: $btn-active-box-shadow;
-          }
+          box-shadow: $btn-active-box-shadow;
           color: $btn-danger-active-color;
         }
 
@@ -463,22 +291,7 @@
           background-color: $btn-flat-focus-bgcolor;
           border-color: $btn-flat-focus-border-color;
           color: $btn-flat-focus-color;
-          @if $skin-name == 'bootstrap4' {
-            $color-rgba: rgba(mix(lighten($btn-flat-focus-bgcolor, 50%), $btn-flat-focus-border-color, .15), .5);
-            box-shadow: 0 0 0 .25em $color-rgba;
-          }
-          @else if ($skin-name == 'tailwind' or $skin-name == 'tailwind-dark' or $skin-name == 'bootstrap5') {
-            box-shadow: $btn-focus-box-shadow;
-          }
-          @else {
-            box-shadow: $btn-flat-box-shadow;
-          }
-        }
-
-        &:focus:not(:focus-visible) { //mouse click
-          @if $skin-name == 'FluentUI' {
-            outline: none !important; // sass-lint:disable-line no-important
-          }
+          box-shadow: $btn-flat-box-shadow;
         }
 
         &:active,
@@ -486,13 +299,7 @@
           background-color: $btn-flat-active-bgcolor;
           border-color: $btn-flat-active-border-color;
           color: $btn-flat-active-color;
-          @if $skin-name == 'bootstrap4' {
-            $color-rgba: rgba(mix(lighten($btn-flat-active-bgcolor, 50%), $btn-flat-active-border-color, .15), .5);
-            box-shadow: 0 0 0 .25em $color-rgba;
-          }
-          @else if $skin-name != 'bootstrap5' {
-            box-shadow: $btn-flat-active-box-shadow;
-          }
+          box-shadow: $btn-flat-active-box-shadow;
         }
 
         &:disabled {
@@ -521,22 +328,6 @@
             background-color: $btn-flat-primary-focus-bgcolor;
             border-color: $btn-flat-primary-focus-border-color;
             color: $btn-flat-primary-focus-color;
-            @if $skin-name == 'bootstrap4' {
-              $color-rgba: rgba(mix(lighten($btn-flat-primary-focus-bgcolor, 50%), $btn-flat-primary-focus-border-color, .15), .5);
-              box-shadow: 0 0 0 .25em $color-rgba;
-            }
-            @else if ($skin-name == 'tailwind' or $skin-name == 'tailwind-dark') {
-              box-shadow: $btn-focus-box-shadow;
-            }
-            @else if ($skin-name == 'bootstrap5') {
-              box-shadow: $btn-primary-focus-box-shadow;
-            }
-          }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important
-            }
           }
 
           &:active,
@@ -544,10 +335,6 @@
             background-color: $btn-flat-primary-active-bgcolor;
             border-color: $btn-flat-primary-active-border-color;
             color: $btn-flat-primary-active-color;
-            @if $skin-name == 'bootstrap4' {
-              $color-rgba: rgba(mix(lighten($btn-flat-primary-active-bgcolor, 50%), $btn-flat-primary-active-border-color, .15), .5);
-              box-shadow: 0 0 0 .25em $color-rgba;
-            }
           }
 
           &:disabled {
@@ -578,39 +365,14 @@
             background-color: $btn-flat-success-focus-bgcolor;
             border-color: $btn-flat-success-focus-border-color;
             color: $btn-flat-success-focus-color;
-            @if $skin-name == 'bootstrap4' {
-              $color-rgba: rgba(mix(lighten($btn-flat-success-focus-bgcolor, 50%), $btn-flat-success-focus-border-color, .15), .5);
-              box-shadow: 0 0 0 .25em $color-rgba;
-            }
-            @else if ($skin-name == 'tailwind' or $skin-name == 'tailwind-dark') {
-              box-shadow: $btn-focus-box-shadow;
-            }
-            @else if ($skin-name == 'bootstrap5') {
-              box-shadow: $btn-success-focus-box-shadow;
-            }
-            @else {
-              box-shadow: $btn-flat-box-shadow;
-            }
+            box-shadow: $btn-flat-box-shadow;
           }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important
-            }
-          }
-
           &:active,
           &.e-active {
             background-color: $btn-flat-success-active-bgcolor;
             border-color: $btn-flat-success-active-border-color;
             color: $btn-flat-success-active-color;
-            @if $skin-name == 'bootstrap4' {
-              $color-rgba: rgba(mix(lighten($btn-flat-success-active-bgcolor, 50%), $btn-flat-success-active-border-color, .15), .5);
-              box-shadow: 0 0 0 .25em $color-rgba;
-            }
-            @else if $skin-name != 'bootstrap5' {
-              box-shadow: $btn-flat-active-box-shadow;
-            }
+            box-shadow: $btn-flat-active-box-shadow;
           }
 
           &:disabled {
@@ -640,25 +402,7 @@
             background-color: $btn-flat-info-focus-bgcolor;
             border-color: $btn-flat-info-focus-border-color;
             color: $btn-flat-info-focus-color;
-            @if $skin-name == 'bootstrap4' {
-              $color-rgba: rgba(mix(lighten($btn-flat-info-focus-bgcolor, 50%), $btn-flat-info-focus-border-color, .15), .5);
-              box-shadow: 0 0 0 .25em $color-rgba;
-            }
-            @else if ($skin-name == 'tailwind' or $skin-name == 'tailwind-dark') {
-              box-shadow: $btn-focus-box-shadow;
-            }
-            @else if ($skin-name == 'bootstrap5') {
-              box-shadow: $btn-info-focus-box-shadow;
-            }
-            @else {
-              box-shadow: $btn-flat-box-shadow;
-            }
-          }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important
-            }
+            box-shadow: $btn-flat-box-shadow;
           }
 
           &:active,
@@ -666,13 +410,7 @@
             background-color: $btn-flat-info-active-bgcolor;
             border-color: $btn-flat-info-active-border-color;
             color: $btn-flat-info-active-color;
-            @if $skin-name == 'bootstrap4' {
-              $color-rgba: rgba(mix(lighten($btn-flat-info-active-bgcolor, 50%), $btn-flat-info-active-border-color, .15), .5);
-              box-shadow: 0 0 0 .25em $color-rgba;
-            }
-            @else if $skin-name != 'bootstrap5' {
-              box-shadow: $btn-flat-active-box-shadow;
-            }
+            box-shadow: $btn-flat-active-box-shadow;
           }
 
           &:disabled {
@@ -702,25 +440,7 @@
             background-color: $btn-flat-warning-focus-bgcolor;
             border-color: $btn-flat-warning-focus-border-color;
             color: $btn-flat-warning-focus-color;
-            @if $skin-name == 'bootstrap4' {
-              $color-rgba: rgba(mix(lighten($btn-flat-warning-focus-bgcolor, 50%), $btn-flat-warning-focus-border-color, .15), .5);
-              box-shadow: 0 0 0 .25em $color-rgba;
-            }
-            @else if ($skin-name == 'tailwind' or $skin-name == 'tailwind-dark') {
-              box-shadow: $btn-focus-box-shadow;
-            }
-            @else if ($skin-name == 'bootstrap5') {
-              box-shadow: $btn-warning-focus-box-shadow;
-            }
-            @else {
-              box-shadow: $btn-flat-box-shadow;
-            }
-          }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important
-            }
+            box-shadow: $btn-flat-box-shadow;
           }
 
           &:active,
@@ -728,13 +448,7 @@
             background-color: $btn-flat-warning-active-bgcolor;
             border-color: $btn-flat-warning-active-border-color;
             color: $btn-flat-warning-active-color;
-            @if $skin-name == 'bootstrap4' {
-              $color-rgba: rgba(mix(lighten($btn-flat-warning-active-bgcolor, 50%), $btn-flat-warning-active-border-color, .15), .5);
-              box-shadow: 0 0 0 .25em $color-rgba;
-            }
-            @else if $skin-name != 'bootstrap5' {
-              box-shadow: $btn-flat-active-box-shadow;
-            }
+            box-shadow: $btn-flat-active-box-shadow;
           }
 
           &:disabled {
@@ -764,25 +478,7 @@
             background-color: $btn-flat-danger-focus-bgcolor;
             border-color: $btn-flat-danger-focus-border-color;
             color: $btn-flat-danger-focus-color;
-            @if $skin-name == 'bootstrap4' {
-              $color-rgba: rgba(mix(lighten($btn-flat-danger-focus-bgcolor, 50%), $btn-flat-danger-focus-border-color, .15), .5);
-              box-shadow: 0 0 0 .25em $color-rgba;
-            }
-            @else if ($skin-name == 'tailwind' or $skin-name == 'tailwind-dark') {
-              box-shadow: $btn-focus-box-shadow;
-            }
-            @else if ($skin-name == 'bootstrap5') {
-              box-shadow: $btn-danger-focus-box-shadow;
-            }
-            @else {
-              box-shadow: $btn-flat-box-shadow;
-            }
-          }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important
-            }
+            box-shadow: $btn-flat-box-shadow;
           }
 
           &:active,
@@ -790,13 +486,7 @@
             background-color: $btn-flat-danger-active-bgcolor;
             border-color: $btn-flat-danger-active-border-color;
             color: $btn-flat-danger-active-color;
-            @if $skin-name == 'bootstrap4' {
-              $color-rgba: rgba(mix(lighten($btn-flat-danger-active-bgcolor, 50%), $btn-flat-danger-active-border-color, .15), .5);
-              box-shadow: 0 0 0 .25em $color-rgba;
-            }
-            @else if $skin-name != 'bootstrap5' {
-              box-shadow: $btn-flat-active-box-shadow;
-            }
+            box-shadow: $btn-flat-active-box-shadow;
           }
 
           &:disabled {
@@ -818,12 +508,7 @@
         color: $btn-outline-color;
 
         &:hover {
-          @if $skin-name == 'bootstrap4' {
-            background-color: $btn-bgcolor;
-          }
-          @else {
-            background-color: $btn-outline-hover-bgcolor;
-          }
+          background-color: $btn-outline-hover-bgcolor;
           border-color: $btn-outline-hover-border-color;
           box-shadow: $btn-flat-box-shadow;
           color: $btn-outline-hover-color;
@@ -831,18 +516,6 @@
 
         &:focus {
           @include outline-focus;
-        }
-
-        &:focus:not(:focus-visible) { //mouse click
-          @if $skin-name == 'FluentUI' {
-            outline: none !important; // sass-lint:disable-line no-important
-          }
-        }
-
-        &:focus-visible { // only for keybord
-          @if $skin-name == 'FluentUI' {
-            background-color: $btn-outline-bgcolor;
-          }
         }
 
         &:active,
@@ -860,30 +533,13 @@
           color: $btn-outline-primary-color;
 
           &:hover {
-            @if $skin-name == 'bootstrap4' {
-              background-color: $btn-primary-bgcolor;
-            }
-            @else {
-              background-color: $btn-primary-hover-bgcolor;
-            }
+            background-color: $btn-primary-hover-bgcolor;
             border-color: $btn-outline-primary-hover-border-color;
             color: $btn-primary-hover-color;
           }
 
           &:focus {
             @include outline-primary-focus;
-          }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important // sass-lint:disable-line no-important
-            }
-          }
-
-          &:focus-visible { // only for keybord
-            @if $skin-name == 'FluentUI' {
-              background-color: $btn-outline-bgcolor;
-            }
           }
 
           &:active,
@@ -898,40 +554,17 @@
 
         &.e-success {
           background-color: $btn-outline-bgcolor;
-          @if $skin-name == 'bootstrap5' or $skin-name == 'bootstrap5-dark' {
-            border-color: $success-outline;
-            color: $success-outline;
-          }
-          @else {
-            border-color: $btn-success-bgcolor;
-            color: $btn-success-bgcolor;
-          }
+          border-color: $btn-success-bgcolor;
+          color: $btn-success-bgcolor;
 
           &:hover {
-            @if $skin-name == 'bootstrap4' {
-              background-color: $btn-success-bgcolor;
-            }
-            @else {
-              background-color: $btn-success-hover-bgcolor;
-            }
+            background-color: $btn-success-hover-bgcolor;
             border-color: $btn-success-hover-border-color;
             color: $btn-success-color;
           }
 
           &:focus {
             @include outline-success-focus;
-          }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important
-            }
-          }
-
-          &:focus-visible { // only for keybord
-            @if $skin-name == 'FluentUI' {
-              background-color: $btn-outline-bgcolor;
-            }
           }
 
           &:active,
@@ -946,40 +579,17 @@
 
         &.e-info {
           background-color: $btn-outline-bgcolor;
-          @if $skin-name == 'bootstrap5' or $skin-name == 'bootstrap5-dark' {
-            border-color: $info-outline;
-            color: $info-outline;
-          }
-          @else {
-            border-color: $btn-info-bgcolor;
-            color: $btn-info-bgcolor;
-          }
+          border-color: $btn-info-bgcolor;
+          color: $btn-info-bgcolor;
 
           &:hover {
-            @if $skin-name == 'bootstrap4' {
-              background-color: $btn-info-bgcolor;
-            }
-            @else {
-              background-color: $btn-info-hover-bgcolor;
-            }
+            background-color: $btn-info-hover-bgcolor;
             border-color: $btn-info-hover-border-color;
             color: $btn-info-color;
           }
 
           &:focus {
             @include outline-info-focus;
-          }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important
-            }
-          }
-
-          &:focus-visible { // only for keybord
-            @if $skin-name == 'FluentUI' {
-              background-color: $btn-outline-bgcolor;
-            }
           }
 
           &:active,
@@ -994,40 +604,17 @@
 
         &.e-warning {
           background-color: $btn-outline-bgcolor;
-          @if $skin-name == 'bootstrap5' or $skin-name == 'bootstrap5-dark' {
-            border-color: $warning-outline;
-            color: $warning-outline;
-          }
-          @else {
-            border-color: $btn-warning-bgcolor;
-            color: $btn-warning-bgcolor;
-          }
+          border-color: $btn-warning-bgcolor;
+          color: $btn-warning-bgcolor;
 
           &:hover {
-            @if $skin-name == 'bootstrap4' {
-              background-color: $btn-warning-bgcolor;
-            }
-            @else {
-              background-color: $btn-warning-hover-bgcolor;
-            }
+            background-color: $btn-warning-hover-bgcolor;
             border-color: $btn-warning-hover-border-color;
             color: $btn-warning-color;
           }
 
           &:focus {
             @include outline-warning-focus;
-          }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important
-            }
-          }
-
-          &:focus-visible { // only for keybord
-            @if $skin-name == 'FluentUI' {
-              background-color: $btn-outline-bgcolor;
-            }
           }
 
           &:active,
@@ -1042,40 +629,17 @@
 
         &.e-danger {
           background-color: $btn-outline-bgcolor;
-          @if $skin-name == 'bootstrap5' or $skin-name == 'bootstrap5-dark' {
-            border-color: $danger-outline;
-            color: $danger-outline;
-          }
-          @else {
-            border-color: $btn-danger-bgcolor;
-            color: $btn-danger-bgcolor;
-          }
+          border-color: $btn-danger-bgcolor;
+          color: $btn-danger-bgcolor;
 
           &:hover {
-            @if $skin-name == 'bootstrap4' {
-              background-color: $btn-danger-bgcolor;
-            }
-            @else {
-              background-color: $btn-danger-hover-bgcolor;
-            }
+            background-color: $btn-danger-hover-bgcolor;
             border-color: $btn-danger-hover-border-color;
             color: $btn-danger-color;
           }
 
           &:focus {
             @include outline-danger-focus;
-          }
-
-          &:focus:not(:focus-visible) { //mouse click
-            @if $skin-name == 'FluentUI' {
-              outline: none !important; // sass-lint:disable-line no-important
-            }
-          }
-
-          &:focus-visible { // only for keybord
-            @if $skin-name == 'FluentUI' {
-              background-color: $btn-outline-bgcolor;
-            }
           }
 
           &:active,

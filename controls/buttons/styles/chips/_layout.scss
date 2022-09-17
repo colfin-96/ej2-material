@@ -24,7 +24,7 @@
       overflow: $chip-overflow;
       padding: $chip-padding;
       position: relative;
-      transition: box-shadow 300ms cubic-bezier(.4, 0, .2, 1);
+      transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
       user-select: none;
 
       .e-chip-avatar {
@@ -64,9 +64,6 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        @if ($skin-name == 'bootstrap5' or $skin-name == 'bootstrap5dark') {
-          height: $chip-text-height;
-        }
       }
 
       .e-chip-delete {
@@ -115,17 +112,6 @@
         overflow: hidden;
         width: $chip-delete-icon-size;
       }
-
-    }
-
-    .e-chip.e-outline {
-      .e-chip-avatar {
-        @if ($skin-name == 'FluentUI') {
-          border-radius: $chip-avatar-wrapper-border-radius;
-          height: $chip-outline-avatar-size;
-          width: $chip-outline-avatar-size;
-        }
-      }
     }
 
     &:not(.e-chip) {
@@ -143,7 +129,7 @@
         margin: $chip-multi-selection-icon-margin;
         margin-top: $chip-multi-selection-icon-margin-top;
         overflow: hidden;
-        transition: width 300ms cubic-bezier(.4, 0, .2, 1);
+        transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1);
         width: $chip-leading-icon-size;
       }
 
@@ -241,12 +227,6 @@
       padding: $chip-touch-padding;
     }
 
-    .e-chip-text {
-      @if ($skin-name == 'bootstrap5' or $skin-name == 'bootstrap5dark' ) {
-        height: $chip-touch-text-height;
-      }
-    }
-
     .e-chip-avatar {
       font-size: $chip-touch-avatar-content-font-size;
       height: $chip-touch-avatar-size;
@@ -271,18 +251,6 @@
       height: $chip-touch-delete-icon-size;
       margin: $chip-touch-delete-icon-margin;
       width: $chip-touch-delete-icon-size;
-
-      @if $skin-name == 'bootstrap4' {
-        &.e-dlt-btn::before {
-          font-size: small;
-        }
-      }
-
-      @if ($skin-name == 'bootstrap5' or $skin-name == 'bootstrap5dark') {
-        &.e-dlt-btn::before {
-          font-size: 13px;
-        }
-      }
     }
 
     .trailing-icon-url {
@@ -356,7 +324,6 @@
       .trailing-icon-url {
         margin: $chip-touch-rtl-delete-icon-margin;
       }
-
     }
   }
 }
